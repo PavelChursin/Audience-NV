@@ -207,7 +207,7 @@ function renderHeatmap() {
   channels.forEach(([segment, ...scores]) => {
     cells.push(`<div class="segment-cell">${segment}</div>`);
     scores.forEach((score) => {
-      const colors = { 1: "#d8e3dc", 2: "#a9c7ba", 3: "#67a184", 4: "#2e7d5b", 5: "#1d4f45" };
+      const colors = { 1: "#f2f4f7", 2: "#ffd8bd", 3: "#ffb579", 4: "#ff8a2a", 5: "#ff6a00" };
       cells.push(`<div class="heat" style="background:${colors[score]}">${score}</div>`);
     });
   });
