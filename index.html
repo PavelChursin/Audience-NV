@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NeuroVision Research Atlas</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#hero" aria-label="NeuroVision Research Atlas">
+        <span class="brand-mark"></span>
+        <span>NeuroVision Research Atlas</span>
+      </a>
+      <nav aria-label="Навигация по исследованию">
+        <a href="#overview">Обзор</a>
+        <a href="#results">Результаты</a>
+        <a href="#details">Детали</a>
+        <a href="#methodology">Методология</a>
+        <a href="#summary">Итоги</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="hero" class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Исследование целевой аудитории</p>
+          <h1>Где NeuroVision быстрее всего найдет спрос на identity infrastructure</h1>
+          <p class="lead">
+            Визуальная карта GTM-приоритетов для KYC, document verification, face match,
+            liveness, antifraud и remote onboarding.
+          </p>
+          <div class="hero-findings" aria-label="Главные выводы">
+            <article>
+              <strong>1</strong>
+              <span>Стартовый фокус: Remittance / EMI, криптобиржи, маркетплейсы, iGaming и финтех.</span>
+            </article>
+            <article>
+              <strong>2</strong>
+              <span>Лучший краткосрочный спрос там, где совпадают обязательная идентификация, fraud pressure, ROI и быстрый buyer motion.</span>
+            </article>
+            <article>
+              <strong>3</strong>
+              <span>Банки, telecom и insurance крупнее по чекам, но требуют более длинного enterprise-процесса.</span>
+            </article>
+          </div>
+        </div>
+
+        <aside class="hero-metric" aria-label="Ключевая метрика исследования">
+          <div class="metric-shell">
+            <span class="metric-label">Лидер рейтинга</span>
+            <strong>7.85</strong>
+            <span class="metric-name">Remittance / EMI / cross-border payments</span>
+            <div class="meter" aria-hidden="true"><span style="width:78.5%"></span></div>
+            <p>Лучший баланс срочности, бюджета, среднего чека и международной масштабируемости.</p>
+          </div>
+          <div class="mini-stack" id="heroTopSegments"></div>
+        </aside>
+      </section>
+
+      <section id="overview" class="section">
+        <div class="section-head">
+          <p class="eyebrow">01 / Обзор</p>
+          <h2>Контекст, методология и рамки модели</h2>
+          <p>
+            Оценки ниже являются аналитической моделью под NeuroVision. Шкала: 10 означает
+            лучше для NeuroVision; в критерии “конкуренция” 10 означает более низкое конкурентное давление.
+          </p>
+        </div>
+        <div class="overview-grid">
+          <article class="info-block">
+            <h3>Контекст категории</h3>
+            <p>
+              Identity infrastructure растет на фоне CDD/AML-требований, fraud-моделей,
+              synthetic identities, deepfake-атак, account renting, seller impersonation
+              и злоупотреблений цифровыми каналами.
+            </p>
+          </article>
+          <article class="info-block">
+            <h3>Методология</h3>
+            <p>
+              Сегменты оценены по размеру рынка, конкуренции, скорости решения, среднему чеку,
+              вероятности покупки, срочности боли, бюджету и доступу к ЛПР.
+            </p>
+          </article>
+          <article class="info-block">
+            <h3>Выборка</h3>
+            <dl>
+              <div><dt>Сегменты</dt><dd>17</dd></div>
+              <div><dt>Критерии приоритизации</dt><dd>8</dd></div>
+              <div><dt>Лидогенерационные каналы</dt><dd>6</dd></div>
+              <div><dt>Роли buying committee</dt><dd>11</dd></div>
+            </dl>
+          </article>
+          <article class="info-block">
+            <h3>Источник данных</h3>
+            <p>
+              Публичные регуляторные требования, рыночные сигналы, vendor landscape и
+              приложенный Markdown-отчет. Период исследования в файле не указан явно.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="results" class="section accent-section">
+        <div class="section-head compact">
+          <p class="eyebrow">02 / Ключевые результаты</p>
+          <h2>Приоритет сегментов и причины лидерства</h2>
+        </div>
+
+        <div class="controls" aria-label="Фильтры сегментов">
+          <label>
+            Сегмент
+            <input id="segmentSearch" type="search" placeholder="Например: crypto, banks, marketplace" />
+          </label>
+          <label>
+            Минимальный итог
+            <input id="scoreRange" type="range" min="5" max="8" step="0.05" value="5" />
+            <span id="scoreValue">5.00+</span>
+          </label>
+          <label>
+            Сортировка
+            <select id="sortMode">
+              <option value="score">Итоговый рейтинг</option>
+              <option value="urgency">Срочность боли</option>
+              <option value="dealSpeed">Скорость решения</option>
+              <option value="ticket">Средний чек</option>
+              <option value="competition">Легкость дифференциации</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="results-layout">
+          <div class="rank-panel">
+            <div class="panel-title">
+              <h3>Рейтинг сегментов</h3>
+              <span id="visibleCount"></span>
+            </div>
+            <div id="segmentBars" class="bar-list"></div>
+          </div>
+          <div class="radar-card">
+            <div class="panel-title">
+              <h3>Профиль выбранного сегмента</h3>
+              <span id="selectedSegmentName"></span>
+            </div>
+            <div id="segmentProfile" class="profile-grid"></div>
+          </div>
+        </div>
+
+        <div class="insight-strip">
+          <article>
+            <span>Быстрые лиды</span>
+            <strong>Криптообменники, МФО, HR-tech</strong>
+          </article>
+          <article>
+            <span>Крупные чеки</span>
+            <strong>Банки, telecom, marketplaces</strong>
+          </article>
+          <article>
+            <span>Международная экспансия</span>
+            <strong>Remittance / EMI, fintech, crypto exchanges</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head compact">
+          <p class="eyebrow">03 / Каналы и экономика</p>
+          <h2>Где искать ЛПР и как выглядит коммерческая модель</h2>
+        </div>
+        <div class="split">
+          <article class="data-card">
+            <div class="panel-title">
+              <h3>Эффективность каналов</h3>
+              <span>5 = очень эффективно</span>
+            </div>
+            <div id="channelHeatmap" class="heatmap"></div>
+          </article>
+          <article class="data-card">
+            <div class="panel-title">
+              <h3>Экономика по сегментам</h3>
+              <span>из исследования</span>
+            </div>
+            <div id="economicsTable" class="scroll-table"></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="details" class="section">
+        <div class="section-head compact">
+          <p class="eyebrow">04 / Детальный анализ</p>
+          <h2>Buyer committee, триггеры, боли, возражения и конкуренты</h2>
+        </div>
+        <div class="tabbar" role="tablist" aria-label="Детальные таблицы">
+          <button class="active" data-tab="roles" type="button">Роли</button>
+          <button data-tab="triggers" type="button">Триггеры</button>
+          <button data-tab="pains" type="button">Боли</button>
+          <button data-tab="objections" type="button">Возражения</button>
+          <button data-tab="competitors" type="button">Конкуренты</button>
+        </div>
+        <div id="detailPanel" class="detail-panel"></div>
+      </section>
+
+      <section id="methodology" class="section">
+        <div class="section-head">
+          <p class="eyebrow">05 / Методология и ограничения</p>
+          <h2>Что важно помнить при чтении модели</h2>
+        </div>
+        <div class="method-grid">
+          <article>
+            <h3>Модель, а не рыночная истина</h3>
+            <p>
+              Все оценки приоритизации, каналов, экономики и messaging обозначены в отчете
+              как NeuroVision-specific аналитическая модель.
+            </p>
+          </article>
+          <article>
+            <h3>Нет полного набора дат</h3>
+            <p>
+              В отчете есть внешние рыночные ориентиры и ссылки, но явный период проведения
+              исследования не указан.
+            </p>
+          </article>
+          <article>
+            <h3>Часть экономики дана диапазонами</h3>
+            <p>
+              Средний чек, пилот, CPL, CAC и LTV представлены как вероятные диапазоны,
+              а не как фактические результаты NeuroVision.
+            </p>
+          </article>
+          <article>
+            <h3>Проверка гипотез обязательна</h3>
+            <p>
+              Для продажевого применения нужны пилоты, benchmark на исторических кейсах,
+              сегментные pass rate / latency / false reject метрики и реальные buyer interviews.
+            </p>
+          </article>
+        </div>
+        <details class="source-report">
+          <summary>Открыть полный Markdown-отчет без сокращений</summary>
+          <iframe title="Полный отчет Markdown" src="./deep-research-report.md"></iframe>
+        </details>
+      </section>
+
+      <section id="summary" class="section summary">
+        <div>
+          <p class="eyebrow">06 / Итоги</p>
+          <h2>Рекомендуемый трехконтурный GTM</h2>
+          <p>
+            Не начинать со всех regulated industries сразу. Сначала брать сегменты, где buyer
+            уже согласен, что verification mission-critical, затем использовать кейсы и benchmark
+            для более тяжелых enterprise-сделок.
+          </p>
+        </div>
+        <div class="gtm-grid">
+          <article>
+            <span>Контур роста</span>
+            <strong>Fintech, EMI/remittance, crypto</strong>
+          </article>
+          <article>
+            <span>Trust & Safety</span>
+            <strong>Marketplaces, delivery, rentals, selected SaaS</strong>
+          </article>
+          <article>
+            <span>Enterprise expansion</span>
+            <strong>Banks, telecom, insurance</strong>
+          </article>
+        </div>
+        <div class="next-steps">
+          <h3>Следующие шаги</h3>
+          <ol>
+            <li>Собрать 90-дневный outbound на Remittance / EMI, маркетплейсы и криптобиржи.</li>
+            <li>Подготовить benchmark-пилот: pass rate, false reject, latency, manual review reduction.</li>
+            <li>Разделить messaging на compliance, antifraud, ROI и deployment/privacy angles.</li>
+          </ol>
+        </div>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
