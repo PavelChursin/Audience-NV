@@ -574,27 +574,6 @@ td:first-child { font-weight: 760; }
 
 .method-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
-.source-report {
-  margin-top: 18px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: #fff;
-}
-
-.source-report summary {
-  cursor: pointer;
-  padding: 18px 20px;
-  font-weight: 800;
-}
-
-.source-report iframe {
-  width: 100%;
-  height: 70vh;
-  border: 0;
-  border-top: 1px solid var(--line);
-  background: #fff;
-}
-
 .summary {
   margin: clamp(54px, 7vw, 96px) clamp(18px, 5vw, 72px);
   padding: clamp(28px, 5vw, 48px);
